@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trapezoidal vs Simpson’s Rule Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>Eliminate Error in Trapezoidal Rule by Applying Simpson’s Rule</h1>
+    <p>Compare the accuracy of numerical integration methods.</p>
+  </header>
+
+  <main>
+    <section id="calculator">
+      
+      <h2>Interactive Calculator</h2>
+
+      <div class="input-row">
+        <div class="input-group">
+          <label for="function">Function (in terms of x):</label>
+          <input type="text" id="function"
+            placeholder="e.g., 0.2 + 25 * x - 200 * Math.pow(x, 2) + 675 * Math.pow(x, 3) - 900 * Math.pow(x, 4) + 400 * Math.pow(x, 5)" />
+        </div>
+
+        <div class="input-group">
+          <label for="a">Lower Bound (a):</label>
+          <input type="number" id="a" placeholder="Enter lower bound" />
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-group">
+          <label for="b">Upper Bound (b):</label>
+          <input type="number" id="b" placeholder="Enter upper bound" />
+        </div>
+
+        <div class="input-group">
+          <label for="n">Number of Intervals (n):</label>
+          <input type="number" id="n" placeholder="Enter number of intervals" />
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-group">
+          <label for="trueValue">True Value:</label>
+          <input type="number" id="trueValue" placeholder="Enter true value" />
+        </div>
+      </div>
+
+      <button id="calculateBtn">Calculate</button>
+
+    </section>
+
+    <section id="results">
+      <h2>Results</h2>
+      <p id="trapResult">Trapezoidal Rule Result:</p>
+      <p id="trapError">Trapezoidal Rule Error:</p>
+      <p id="simpResult">Simpson’s Rule Result:</p>
+      <p id="simpError">Simpson’s Rule Error:</p>
+    </section>
+
+    <section id="graph">
+      <h2>Graphical Representation</h2>
+      <div id="plot"></div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
